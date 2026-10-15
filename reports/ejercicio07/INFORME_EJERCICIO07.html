@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>U04.E07 · Evaluación de impacto y auditoría de equidad</title>
+  <style>
+    :root { color: #172033; font: 11pt/1.48 "Segoe UI", Arial, sans-serif; }
+    body { margin: 0 auto; max-width: 900px; padding: 42px 54px; }
+    h1, h2, h3 { color: #173b64; line-height: 1.2; }
+    h1 { font-size: 26pt; margin: 0 0 8px; }
+    h2 { border-bottom: 2px solid #d7e3f0; margin-top: 28px; padding-bottom: 5px; }
+    h3 { margin-bottom: 4px; }
+    p { margin: 7px 0; }
+    table { border-collapse: collapse; font-size: 9.5pt; margin: 12px 0 18px; width: 100%; }
+    th, td { border: 1px solid #bdc9d6; padding: 6px 8px; text-align: left; vertical-align: top; }
+    th { background: #eaf1f8; }
+    .meta { color: #42536a; margin-bottom: 20px; }
+    .notice { background: #fff4d6; border-left: 5px solid #d18b00; padding: 12px 16px; margin: 18px 0; }
+    .decision { background: #edf6ef; border-left: 5px solid #31804a; padding: 12px 16px; margin: 18px 0; }
+    .small { color: #536273; font-size: 9pt; }
+    .page { break-before: page; }
+    code { background: #f1f3f5; padding: 1px 4px; }
+    a { color: #155a91; }
+    @media print {
+      body { max-width: none; padding: 0; }
+      a { color: #173b64; text-decoration: none; }
+      thead { display: table-header-group; }
+      tr { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Evaluación de impacto y auditoría de equidad</h1>
+  <div class="meta">
+    <strong>INF-8239 · Ciencia de Datos II · Unidad 04 · Ejercicio 07 (U04.E07)</strong><br>
+    Autor: Edwin Ramón José Nolasco · INF-8239-C2<br>
+    Expediente de trabajo · 14 de octubre de 2026
+  </div>
+
+  <div class="notice">
+    <strong>BORRADOR PARA VALIDACIÓN DEL AUTOR.</strong> LAB11–LAB13 y las pruebas se ejecutaron con éxito sobre los datos sintéticos del proyecto. El registro de riesgos contiene valoraciones cualitativas propuestas, no observaciones empíricas; el autor debe revisarlas y ratificarlas. El repositorio GitHub está enlazado, pero vacío y aún no contiene estos artefactos. No se presentan datos de personas ni evidencias inventadas.
+  </div>
+
+  <h2>1. Propósito, alcance y proporcionalidad</h2>
+  <p>El proyecto educativo describe un DSS territorial sintético que prioriza casos para revisión humana. Su propósito aquí es practicar una evaluación de impacto, auditoría de equidad y controles de gobernanza; no es una evaluación de un sistema operativo ni de una población real.</p>
+  <ul>
+    <li><strong>Datos:</strong> el Dataset Card del proyecto declara datos sintéticos, sin personas, ubicaciones, tasas ni estadísticas oficiales reales.</li>
+    <li><strong>Uso permitido en este ejercicio:</strong> comparar métricas y ensayar la priorización de casos sintéticos para revisión humana.</li>
+    <li><strong>Fuera de alcance:</strong> intervención automática, decisión de elegibilidad o declaración de emergencia; también cualquier perfilamiento de poblaciones reales.</li>
+    <li><strong>Proporcionalidad:</strong> como el objetivo es únicamente educativo y los datos son sintéticos, no se justifica trasladar el resultado a personas reales. Cualquier uso futuro requeriría necesidad demostrada, base jurídica, evaluación con datos apropiados, participación de personas afectadas y controles operativos previos.</li>
+  </ul>
+  <p><strong>Interesados:</strong> personas y comunidades potencialmente afectadas, operadores/revisores, propietario institucional y equipo de datos/modelo. Beneficios, daños, nivel de poder y participación propuesta están documentados en <code>student_inputs/stakeholders.csv</code>. No se entrevistó ni consultó a personas afectadas; la participación queda como control previo obligatorio para cualquier propuesta real.</p>
+
+  <h2>2. Registro de riesgos y NIST AI RMF</h2>
+  <p>El registro de <code>student_inputs/risk_register.csv</code> incluye ocho escenarios con población afectada, control, responsable de evaluación, evidencia y riesgo residual. Los valores de likelihood e impacto de 1 a 4 son <strong>valoraciones cualitativas provisionales</strong> propuestas para el ejercicio; su producto ordena prioridades, no representa una probabilidad estadística. “Residual” también es una estimación cualitativa, no una medición. Los responsables institucionales siguen sin designar.</p>
+  <table>
+    <thead><tr><th>Función NIST AI RMF</th><th>Evidencia disponible en este expediente</th><th>Pendiente / límite</th></tr></thead>
+    <tbody>
+      <tr><td><strong>GOVERN</strong></td><td>La configuración prohíbe intervención automática, decisiones de elegibilidad y declaraciones de emergencia. La decisión humana del ejercicio excluye uso real.</td><td>Asignar propietario institucional, autoridad de suspensión, responsables de incidentes y calendario de revisión.</td></tr>
+      <tr><td><strong>MAP</strong></td><td>Propósito, uso previsto, alternativas, población afectada potencial, fuera de alcance y ocho riesgos documentados; el autor priorizó falsos negativos.</td><td>Las valoraciones cualitativas deben ser ratificadas; no hubo consulta a personas afectadas y no hay propietario operacional designado.</td></tr>
+      <tr><td><strong>MEASURE</strong></td><td>Se midieron métricas globales, por grupo protegido e interseccionales para dos modelos, junto con recursos y puertas configuradas.</td><td>La muestra de prueba es pequeña y sintética; no se reportan intervalos de incertidumbre ni validez externa.</td></tr>
+      <tr><td><strong>MANAGE</strong></td><td>Se propone detener el apoyo del modelo si falla una puerta, hay deriva/daño o se intenta uso fuera de alcance; la alternativa es revisión manual.</td><td>El runbook, la apelación y la condición de retiro están descritos, pero requieren aprobación, responsable y prueba antes de cualquier operación real.</td></tr>
+    </tbody>
+  </table>
+  <p class="small">NIST AI RMF 1.0 es un marco voluntario, no una ley ni una certificación de cumplimiento. La página oficial de NIST indica que su uso es voluntario y que el marco se encuentra en revisión: <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a>.</p>
+
+  <div class="page"></div>
+  <h2>3. Auditoría global y por grupos (LAB12)</h2>
+  <p>La auditoría utiliza el corte temporal de prueba del proyecto, con 160 registros sintéticos (101 del grupo G1 y 59 de G2). El modelo logístico obtuvo recall global de 0.717 y brecha de recall de 0.138; el árbol obtuvo el mismo recall global, pero brechas mayores. El umbral configurado en <code>configs/governance.yml</code> exige recall ≥ 0.68, brecha de recall ≤ 0.16 y brecha de FPR ≤ 0.16.</p>
+  <table>
+    <thead><tr><th>Modelo</th><th>Exactitud</th><th>Recall</th><th>Brecha recall</th><th>Brecha FPR</th><th>FPR G1 / G2</th><th>Tamaño</th></tr></thead>
+    <tbody>
+      <tr><td>Logístico</td><td>0.719</td><td>0.717</td><td>0.138</td><td>0.125</td><td>0.250 / 0.375</td><td>3.56 KB</td></tr>
+      <tr><td>Árbol</td><td>0.706</td><td>0.717</td><td>0.181</td><td>0.168</td><td>0.269 / 0.438</td><td>7.87 KB</td></tr>
+    </tbody>
+  </table>
+  <p>En la vista por grupo, el recall fue 0.653 para G1 y 0.791 para G2 con el modelo logístico; para el árbol fue 0.633 y 0.814, respectivamente. La brecha de falsos positivos por grupo también fue menor para el modelo logístico (0.125 frente a 0.168).</p>
+
+  <h3>Resultados interseccionales y cautelas</h3>
+  <p>Se evaluaron cruces de grupo protegido y edad. En LOGISTIC, la celda más pequeña contiene 8 casos (G2, 45–59); el recall varía entre 0.563 (G1, 30–44; n=24) y 1.000 (G2, 45–59; n=8). En TREE, la FPR llega a 1.000 en G2, 30–44 (n=14), mientras otras celdas registran 0.000. Estos extremos no son estimaciones estables con tamaños tan reducidos y no justifican conclusiones sobre grupos reales.</p>
+  <p>Los CSV por grupo e intersección son la evidencia detallada. No se agregaron celdas ni se ocultaron grupos para mejorar artificialmente los resultados. Antes de cualquier uso real se necesitarían datos adecuados, tamaños suficientes, intervalos de incertidumbre, validación externa y análisis con las personas afectadas.</p>
+
+  <h2>4. Mitigación, trade-offs y decisión final del ejercicio</h2>
+  <p>El autor indicó que la prioridad de daño es el falso negativo: un caso relevante que el sistema no prioriza. La mitigación debe favorecer recall adecuado, con revisión humana de casos no priorizados y una alternativa sin puntuación disponible. Elevar el umbral de sensibilidad puede aumentar falsos positivos y carga de revisión; ese trade-off debe medirse y aceptarse explícitamente, no ocultarse mediante una métrica única.</p>
+  <div class="decision">
+    <strong>Decisión humana seleccionada:</strong> modificar y limitar el sistema a priorización para revisión humana; sin uso operacional con personas reales. La decisión no autoriza despliegue. Cualquier futura propuesta requiere un nuevo análisis jurídico, evidencia representativa, controles, participación de afectados y aprobación institucional.
+  </div>
+  <p><strong>Distinción importante:</strong> LAB13 devuelve estado técnico <code>GO</code> porque el modelo logístico supera todas las puertas numéricas existentes en la configuración. Ese resultado automático de pruebas no es una autorización ni sustituye la decisión humana. La decisión final de este expediente es restrictiva y prevalece sobre esa señal técnica.</p>
+  <p><strong>Controles propuestos:</strong> mantener la decisión bajo control humano; registrar razones y overrides; permitir revisión/corrección; monitorizar recall y brechas por grupo; suspender ante fallos, deriva, incidentes o uso fuera de alcance; conservar la ruta manual sin modelo. Están descritos en el runbook, pero aún no tienen propietario institucional ni prueba operativa.</p>
+
+  <h2>5. Obligación legal, marco voluntario y recomendación ética</h2>
+  <table>
+    <thead><tr><th>Categoría</th><th>Tratamiento en este expediente</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Posible obligación legal (República Dominicana)</strong></td><td>Si se propusiera tratar datos personales en un sistema real, el análisis debe considerar, entre otras normas aplicables, la Constitución dominicana (art. 44) y la Ley núm. 172-13 de protección integral de datos personales. El registro oficial de la Consultoría Jurídica identifica la Ley 172-13, de 13 de diciembre de 2013, Gaceta Oficial núm. 10737, con objeto de protección integral de datos personales. Aquí solo se usan datos sintéticos: no se determina una base jurídica ni se declara cumplimiento. La aplicación concreta depende de finalidad, responsable, datos, contexto institucional y revisión jurídica local.</td></tr>
+      <tr><td><strong>Marco voluntario</strong></td><td>NIST AI RMF 1.0 organiza la gestión en GOVERN, MAP, MEASURE y MANAGE. Es una referencia voluntaria; no reemplaza la ley, el análisis jurídico ni la aprobación de la institución.</td></tr>
+      <tr><td><strong>Recomendación ética</strong></td><td>No usar el modelo para decidir sobre personas ni para operar en poblaciones reales; mantenerlo como ejercicio y, en el escenario didáctico, limitarlo a priorización con revisión humana, transparencia y posibilidad de impugnar.</td></tr>
+    </tbody>
+  </table>
+  <p class="small"><strong>Fuentes normativas consultadas (14-oct-2026):</strong> Constitución de la República Dominicana (2015), art. 44; Ley núm. 172-13, de 13-dic-2013, Gaceta Oficial 10737. La <a href="https://www.consultoria.gov.do/consultas">Consulta oficial de legislación de la Consultoría Jurídica del Poder Ejecutivo</a> permitió localizar la ficha de la Ley 172-13 por número. NIST AI RMF 1.0 se cita en el enlace oficial anterior. Estas referencias no sustituyen asesoría legal ni resuelven qué obligaciones concretas aplican a un futuro sistema.</p>
+
+  <div class="page"></div>
+  <h2>6. Pruebas, evidencias y declaración de IA</h2>
+  <h3>Evidencia reproducible disponible</h3>
+  <ul>
+    <li>Auditorías: <code>uv run python scripts/lab12_audit.py --model logistic</code> y <code>uv run python scripts/lab12_audit.py --model tree</code>.</li>
+    <li>Gobernanza: <code>uv run python scripts/lab13_governance.py</code>; estado técnico <code>GO</code>, todas las cinco puertas numéricas pasan.</li>
+    <li>Pruebas automatizadas: suite completa en <code>tests/</code>; último resultado: <strong>12 pasaron</strong>.</li>
+    <li>LAB11 ejecutado sobre los datos de impacto, interesados y riesgos ya completados; revisar <code>reports/lab11/</code>. Las valoraciones ordinales son provisionales y requieren ratificación del autor.</li>
+  </ul>
+  <h3>Declaración de uso de IA</h3>
+  <p>Se usó un asistente de IA en VS Code para inspeccionar el proyecto, ejecutar auditorías y pruebas, redactar el expediente, proponer el análisis de interesados y las valoraciones ordinales de riesgo, reforzar la validación LAB11 y añadir pruebas. No cambió el algoritmo del modelo, los datos sintéticos ni las puertas configuradas; no creó datos de personas. El autor eligió la prioridad de falsos negativos, jurisdicción dominicana y la decisión restrictiva de no usar operacionalmente con personas reales. Debe revisar y ratificar valoraciones e interpretación final.</p>
+  <p><strong>Prompts/decisiones relevantes:</strong> consigna del Ejercicio 07; instrucción del autor de completar los componentes que puedan documentarse plenamente; selección humana de falsos negativos como daño prioritario; República Dominicana como jurisdicción; decisión de modificar/limitar a revisión humana sin uso real. Las métricas se contrastaron contra los JSON/CSV y pytest.</p>
+
+  <h2>7. Lista de cierre antes de entregar</h2>
+  <ol>
+    <li>El autor debe ratificar o corregir la valoración cualitativa (probabilidad, impacto y residual), y defender cada elección ante la rúbrica.</li>
+    <li>Antes de cualquier uso real, la institución debe designar propietario, aprobar apelación/retirada, probar los controles y realizar revisión legal y consulta a afectados.</li>
+    <li>Verificar el alcance legal específico con asesoría competente; el expediente separa posibles obligaciones, marco voluntario y recomendación ética.</li>
+    <li>El repositorio indicado se encontraba vacío al iniciar el trabajo; este primer envío incorpora los artefactos y evidencias del ejercicio.</li>
+    <li>El autor debe revisar el PDF, defender la interpretación normativa y aprobar la decisión final antes de entregar.</li>
+  </ol>
+  <p><strong>Repositorio GitHub proporcionado:</strong> <a href="https://github.com/rhaynel19/Ejercicio-07-Evaluaci-n-de-impacto-y-auditor-a-de-equidad">Ejercicio 07 · Evaluación de impacto y auditoría de equidad</a> (repositorio vacío antes de este primer envío).<br>
+  <strong>Artefactos LAB12:</strong> <code>reports/lab12/logistic/</code> y <code>reports/lab12/tree/</code>.<br>
+  <strong>Artefacto LAB13:</strong> <code>reports/lab13/deployment_decision.json</code>.</p>
+  <p><strong>Documentos editables relacionados:</strong>
+    <a href="../../docs/MODEL_CARD.md">Model Card</a>,
+    <a href="../../docs/AI_USE_DECLARATION.md">declaración de uso de IA</a> y
+    <a href="../../docs/RUNBOOK.md">runbook propuesto</a>.
+  </p>
+</body>
+</html>

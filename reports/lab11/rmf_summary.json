@@ -1,0 +1,44 @@
+{
+  "GOVERN": {
+    "academic_owner": "Responsable acad\u00e9mico del expediente: Edwin Ram\u00f3n Jos\u00e9 Nolasco. No existe un propietario institucional u operativo designado.",
+    "institutional_owner": "not designated",
+    "prohibited_uses": [
+      "automatic intervention",
+      "eligibility decision",
+      "emergency declaration",
+      "operational use with real people"
+    ]
+  },
+  "MAP": {
+    "purpose": "Ejercicio acad\u00e9mico para evaluar si un DSS con datos sint\u00e9ticos puede priorizar casos para revisi\u00f3n humana; no es una herramienta operativa.",
+    "assisted_decision": "Orden de revisi\u00f3n de casos sint\u00e9ticos; una persona conserva la decisi\u00f3n y puede ignorar la puntuaci\u00f3n.",
+    "risk_count": 8,
+    "risk_scale": "probabilidad e impacto cualitativos provisionales, cada uno de 1 a 4"
+  },
+  "MEASURE": {
+    "status": "completada",
+    "model": "logistic",
+    "metrics": {
+      "count": 160.0,
+      "accuracy": 0.71875,
+      "selection_rate": 0.53125,
+      "recall": 0.717391304347826,
+      "precision": 0.7764705882352941,
+      "fpr": 0.27941176470588236
+    },
+    "differences": {
+      "count": 42.0,
+      "accuracy": 0.04279241483470386,
+      "selection_rate": 0.23242154723946967,
+      "recall": 0.13763644992880875,
+      "precision": 0.13888888888888884,
+      "fpr": 0.125
+    }
+  },
+  "MANAGE": {
+    "recommendation": "Modificar y limitar a priorizaci\u00f3n de casos sint\u00e9ticos para revisi\u00f3n humana dentro del ejercicio. No desplegar ni usar con personas o datos reales; conservar revisi\u00f3n manual sin modelo como alternativa segura.",
+    "withdrawal_condition": "Suspender cualquier uso asistido si falla una puerta configurada, se detecta deriva o da\u00f1o, no puede verificarse la procedencia/calidad de datos, o se intenta usar fuera del prop\u00f3sito. No reanudar sin an\u00e1lisis, controles probados y aprobaci\u00f3n de un propietario institucional.",
+    "appeal_mechanism": "No aplica a personas reales en el ejercicio sint\u00e9tico. Para una propuesta real se requiere, antes de usarla, un canal accesible para solicitar explicaci\u00f3n, correcci\u00f3n y revisi\u00f3n humana independiente; el responsable y los plazos deben ser aprobados por la instituci\u00f3n.",
+    "institutional_owner": "sin designar"
+  }
+}
