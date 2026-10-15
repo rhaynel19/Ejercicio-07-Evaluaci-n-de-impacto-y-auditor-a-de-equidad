@@ -1,6 +1,7 @@
 from pathlib import Path
-import pandas as pd
+
 import yaml
+
 
 def load_config(path="configs/governance.yml"):
     return yaml.safe_load(Path(path).read_text(encoding="utf-8"))
@@ -8,7 +9,10 @@ def load_config(path="configs/governance.yml"):
 def validate_raci(df):
     required={"activity","R","A","C","I"}
     if required-set(df.columns): raise ValueError("RACI columns missing")
-    if df[["R","A"]].fillna("").apply(lambda s:s.str.strip().eq("")).any().any(): raise ValueError("Every activity needs R and A")
+    if df.empty: raise ValueError("RACI must contain at least one activity")
+    assignments=df[["activity","R","A","C","I"]].fillna("").astype(str).apply(lambda s:s.str.strip())
+    if assignments.eq("").any().any(): raise ValueError("Every activity needs a name and R, A, C, and I assignments")
+    if assignments["activity"].duplicated().any(): raise ValueError("RACI activities must be unique")
     return True
 
 def deployment_decision(metrics, gaps, resources, gates):

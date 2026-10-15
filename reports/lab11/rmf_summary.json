@@ -1,12 +1,12 @@
 {
   "GOVERN": {
     "academic_owner": "Responsable acad\u00e9mico del expediente: Edwin Ram\u00f3n Jos\u00e9 Nolasco. No existe un propietario institucional u operativo designado.",
-    "institutional_owner": "not designated",
+    "institutional_owner": "sin designar",
     "prohibited_uses": [
-      "automatic intervention",
-      "eligibility decision",
-      "emergency declaration",
-      "operational use with real people"
+      "intervenci\u00f3n autom\u00e1tica",
+      "decisiones de elegibilidad",
+      "declaraci\u00f3n de emergencia",
+      "uso operacional con personas reales"
     ]
   },
   "MAP": {

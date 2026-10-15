@@ -1,4 +1,5 @@
 priority_harm: "Falsos negativos: casos relevantes que no se priorizan. Esta prioridad fue elegida por el autor del expediente."
+decision_status: STOP
 primary_metric: "Recall global y por grupo protegido; revisar conjuntamente la brecha de recall y la tasa de falsos positivos (FPR) para evitar ocultar trade-offs."
 tolerance: "Usar las puertas ya configuradas, sin ajustarlas a posteriori: recall >= 0.68; brecha entre grupos de recall <= 0.16; brecha entre grupos de FPR <= 0.16. Son umbrales didácticos del proyecto, no estándares legales ni una aceptación de riesgo real."
 evidence: "reports/lab12/logistic/global_metrics.json; reports/lab12/logistic/fairness_by_group.csv; reports/lab12/logistic/fairness_intersectional.csv; reports/lab12/tree/global_metrics.json; reports/lab12/tree/fairness_by_group.csv; reports/lab12/tree/fairness_intersectional.csv; reports/lab13/deployment_decision.json."

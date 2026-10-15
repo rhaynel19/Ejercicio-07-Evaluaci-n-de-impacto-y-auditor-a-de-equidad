@@ -4,8 +4,13 @@ REQUIRED_IMPACT={"purpose","assisted_decision","users","affected_population","ow
 REQUIRED_RISK={"id","scenario","affected","likelihood_1_4","impact_1_4","control","owner","evidence","residual"}
 
 def validate_impact(data):
+    if not isinstance(data, dict):
+        raise TypeError("Impact assessment must be a YAML mapping")
     missing=REQUIRED_IMPACT-set(data)
-    incomplete=[k for k in REQUIRED_IMPACT if str(data.get(k,"" )).strip() in {"","REPLACE"}]
+    incomplete=[
+        key for key in REQUIRED_IMPACT
+        if data.get(key) is None or str(data.get(key, "")).strip().upper() in {"", "REPLACE"}
+    ]
     if missing or incomplete: raise ValueError(f"Incomplete impact assessment: {sorted(missing|set(incomplete))}")
     return True
 

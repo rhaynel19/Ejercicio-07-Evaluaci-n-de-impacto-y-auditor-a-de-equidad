@@ -15,6 +15,15 @@
 - Estado de medición: completada
 - Limitación: Prueba temporal sintética de 160 filas; intersecciones pequeñas (mínimo n=8); no hay intervalos de confianza, validación externa, consulta a afectados ni demostración de validez en una población real.
 
+## Decisión y autorización
+
+- Puertas técnicas de LAB13: GO. Este estado solo compara métricas con umbrales configurados; no autoriza despliegue.
+- Estado para uso operacional con personas reales: STOP.
+- Alcance del ejercicio: Modificar y limitar a priorización de casos sintéticos para revisión humana dentro del ejercicio. No desplegar ni usar con personas o datos reales; conservar revisión manual sin modelo como alternativa segura.
+- Alternativa sin modelo: Revisión manual con criterios transparentes, sin puntuación ni ordenamiento del modelo; es la línea base segura si los controles no pasan.
+- Incertidumbre: datos sintéticos; sin validación externa ni intervalos de confianza; celdas interseccionales pequeñas; no hubo consulta a personas afectadas.
+- Condición de retiro: Suspender cualquier uso asistido si falla una puerta configurada, se detecta deriva o daño, no puede verificarse la procedencia/calidad de datos, o se intenta usar fuera del propósito. No reanudar sin análisis, controles probados y aprobación de un propietario institucional.
+
 ## Priorización de riesgos
 
 La probabilidad y el impacto son valoraciones cualitativas provisionales de 1
@@ -33,11 +42,8 @@ y de la institución antes de cualquier uso operacional.
 | R08 | 6 | medium | Academic owner for exercise; MLOps/monitoring owner unassigned. |
 | R05 | 4 | medium | Academic owner for this exercise; institutional privacy officer unassigned. |
 
-## Decisión
-
-Modificar y limitar a priorización de casos sintéticos para revisión humana dentro del ejercicio. No desplegar ni usar con personas o datos reales; conservar revisión manual sin modelo como alternativa segura.
-
-Esta es la decisión restrictiva del autor para el ejercicio y no autoriza
-despliegue. Si una propuesta futura incumple un umbral configurado, carece de
+La decisión STOP aplica al uso operacional con personas reales; el trabajo puede
+continuar únicamente como ejercicio académico con datos sintéticos y supervisión
+humana. Si una propuesta futura incumple un umbral configurado, carece de
 evidencia representativa o controles aprobados, o se sale del alcance, se debe
 suspender la priorización asistida y usar la alternativa manual no predictiva.

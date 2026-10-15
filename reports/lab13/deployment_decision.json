@@ -8,9 +8,9 @@
     "fpr_gap": 0.125
   },
   "resources": {
-    "training_seconds": 0.08828739996533841,
+    "training_seconds": 0.08255549997556955,
     "model_kb": 3.5634765625,
-    "latency_ms": 0.05230250026215799
+    "latency_ms": 0.0456212495919317
   },
   "decision": {
     "status": "GO",
@@ -23,5 +23,10 @@
     },
     "failed": [],
     "human_action": "Document review and final decision"
+  },
+  "human_decision": {
+    "status": "STOP",
+    "recommendation": "Modificar y limitar a priorizaci\u00f3n de casos sint\u00e9ticos para revisi\u00f3n humana dentro del ejercicio. No desplegar ni usar con personas o datos reales; conservar revisi\u00f3n manual sin modelo como alternativa segura.",
+    "scope": "Synthetic educational use only; no operational use with real people."
   }
 }

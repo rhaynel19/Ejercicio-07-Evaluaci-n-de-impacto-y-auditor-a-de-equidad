@@ -4,6 +4,7 @@ prohibited_uses:
   - automatic intervention
   - eligibility decision
   - emergency declaration
+  - operational use with real people
 sensitive_features: [protected_group, age_band]
 direct_identifiers: [name, document_number, email, phone]
 gates:

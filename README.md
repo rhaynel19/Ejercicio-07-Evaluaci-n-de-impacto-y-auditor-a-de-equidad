@@ -11,9 +11,10 @@ uv run python scripts/check_environment.py
 
 ## Ruta
 ```bash
-uv run python scripts/lab11_impact.py
 uv run python scripts/lab12_audit.py --model logistic
+uv run python scripts/lab12_audit.py --model tree
 uv run python scripts/lab13_governance.py
+uv run python scripts/lab11_impact.py
 uv run streamlit run app.py
 ```
 
